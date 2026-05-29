@@ -3,7 +3,6 @@ from pathlib import Path
 import pipelines
 import preprocessor
 import aggregator
-import app
 
 
 def content_moderation(video_path,user_text=""):
