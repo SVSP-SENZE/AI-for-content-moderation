@@ -9,11 +9,11 @@ def aggregate_results(text_results,audio_results,video_result):
         final_verdict='SAFE'
     results=[]
     if text_score>=0.60:
-        results.append(f'text metadata flagged: {text_results.get('reason')}')
+        results.append(f'text metadata flagged: {text_results.get("reason")}')
     elif audio_score>=0.60:
-        results.append(f'Audio Voice flagged: {audio_results.get('reason')}')
+        results.append(f'Audio Voice flagged: {audio_results.get("reason")}')
     elif video_score>=0.60:
-        results.append(f'video content flagged:{video_result.get('reason')}')
+        results.append(f'video content flagged:{video_result.get("reason")}')
     
     if not results:
         results.append('All channels passed the safety test')

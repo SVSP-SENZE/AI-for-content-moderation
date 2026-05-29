@@ -34,7 +34,7 @@ def extract_frames(my_video):
         if not success:
             break
         if frame_count % int(fps)==0:
-            frame_filename=output_folder
+            frame_filename = output_folder / f"frame_{image_count}.jpg"
             cv2.imwrite(str(frame_filename),frame)
             saved_frames.append(str(frame_filename))
             image_count+=1
@@ -43,8 +43,8 @@ def extract_frames(my_video):
     print('frames processed successfully')
     return saved_frames
 
-def run_all_preprocesssing(my_video):
+def run_all_preprocessing(my_video):
     print('starting prerprocessing')
     audio_file=extract_audio(my_video)
     frame_list=extract_frames(my_video)
-    return {'audio path:':audio_file,'video_path':frame_list}
+    return {'audio_path':audio_file,'video_path':frame_list}
